@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        @import url("style.css");
+    </style>
+    <title>Volunet</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up">
+            <form method="POST" action="">
+                <h1>HESAP OLUŞTUR</h1>
+
+                <span>KAYIT OLMAK İÇİN BİLGİLERİNİZİ GİRİN</span>
+                <input type="int" name="tc_kimlik" placeholder="TC Kimlik" maxlength="11" minlength="11">
+                <input type="text" name="name" placeholder="İSİM" maxlength="11" minlength="3">
+                <input type="text" name="surname" placeholder="SOYİSİM" maxlength="13">
+                <input type="int" name="phone" placeholder="Telefon Numarası" maxlength="11" minlength="11">
+                <input type="text" name="username" placeholder="Kullanıcı Adı" maxlength="9" minlength="4">
+                <input type="password" name="password" placeholder="Şifre" maxlength="20" minlength="8">
+                <button type="submit" name="ekle">KAYIT OL</button>
+            </form>
+        </div>
+        <div class="form-container sign-in">
+            <form method="POST" action="">
+                <h1>GİRİŞ YAP</h1>
+
+                <input type="text" name="username" placeholder="KULLANICI ADI" maxlength="9">
+                <input type="password" name="password" placeholder="ŞİFRE" maxlength="20">  
+                <a href="#">ŞİFRENİ Mİ UNUTTUN?</a>
+                <button type="submit" name="giris">GİRİŞ YAP</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Hesap Oluştur</h1>
+                    <p></p>
+                    <button class="hidden" id="login">GİRİŞ YAP</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Giriş Yap</h1>
+                    <p>Bilgilerinizi Kullanıp Giriş Yapınız</p>
+                    <button class="hidden" id="register">Kayıt Ol</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const container = document.getElementById('container');
+        const registerBtn = document.getElementById('register');
+        const loginBtn = document.getElementById('login');
+
+        registerBtn.addEventListener('click', () => {
+            container.classList.add("active");
+        });
+
+        loginBtn.addEventListener('click', () => {
+            container.classList.remove("active");
+        });
+    </script>
+</body>
+
+</html>
